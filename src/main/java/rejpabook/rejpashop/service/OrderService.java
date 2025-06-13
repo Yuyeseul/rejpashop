@@ -50,4 +50,12 @@ public class OrderService {
         Order order = orderRepository.findOne(orderId);
         order.cancel();
     }
+
+    /**
+     * 주문 검색
+     */
+    public List<Order> findOrders(OrderSearch orderSearch) {
+
+        return orderRepository.findAllByString(orderSearch);
+    }
 }
